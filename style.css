@@ -125,7 +125,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 90px;
+    margin-top: 15px;
     left: 20px;
 }
 
@@ -230,6 +230,11 @@ body{
 
         #mobile-menu.is-active .bar:nth-child(3) {
         transform: translatey(-8px) rotate(-45deg);
+    }
+
+    #theme-switch {
+        margin-top: 100px;
+        margin-right: 40px;
     }
 }
 
@@ -358,6 +363,10 @@ body{
     margin-left: 66px;
 }
 
+.profile__PM h2{
+    text-align: center;
+}
+
 .home__container h2{
     font-size: 2rem;
     color: var(--members);
@@ -394,7 +403,7 @@ body{
 .DV__img img{
     border-radius: 50%;
     width: 120px;
-    height: 140px;
+    height: 180px;
     display: block;
     margin-right: auto;
     margin-left: auto;
@@ -410,7 +419,7 @@ body{
         justify-self: center;
         width: 100%;
         margin: 0 auto;
-        height: 150vh;
+        height: 200vh;
     }
 
     .home__content{
@@ -438,6 +447,26 @@ body{
         width: 350px;
         height: 350px;
     }
+
+    .profile__PM {
+        margin-top: 0px;
+    }
+
+    .profile__developers {
+        margin-top: 5px;
+    }
+}
+
+/*Statement*/
+
+.statement {
+    background-color: var(--base-variant);
+    height: 100%;
+}
+
+.statement h2{
+    size: 3rem;
+    text-align: center;
 }
 
 /*Review*/
