@@ -4,8 +4,8 @@
     --text-color: black;
     --secondary-text: rgb(55, 54, 54);
     --base-nav: #D5B893;
-    --logo-color: #f0f7fe;
-    --link-color: #e3f4fa;
+    --logo-color: #6f4d38;
+    --link-color: #b3e0f0;
     --primary-color: #3a435d;
     --text-highlight: #368cd1;
     --title: #e5f3e5;
@@ -18,8 +18,8 @@
     --base-variant: #25344f;
     --text-color: white;
     --secondary-text: whitesmoke;
-    --base-nav: #9a8366;
-    --logo-color: #rgb(101, 106, 112);
+    --base-nav: #6f4d38;
+    --logo-color: #D5B893;
     --link-color: #768e96;
     --primary-color: #8390b6;
     --text-highlight: #78aad5;
@@ -478,7 +478,7 @@ body{
 .review .box-container .box {
     text-align: center;
     padding: 1rem;
-    border: .1rem solid #16456a;
+    border: .1rem solid var(--text-color);
     box-shadow: var(--box-shadow);
     flex: 1 1 30rem;
     border-radius: 0.5rem;
@@ -488,7 +488,7 @@ body{
 .review .box-container .box img{
     height: 12rem;
     width: 12rem;
-    border: 1px solid #16456a;
+    border: 1px solid var(--text-color);
     margin-top: -8rem;
     object-fit: contain;
     border-radius: 15%;
