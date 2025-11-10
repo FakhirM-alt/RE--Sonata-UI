@@ -3,28 +3,28 @@
     --base-variant: #e3f4fa;
     --text-color: black;
     --secondary-text: rgb(55, 54, 54);
-    --base-nav: #16456a;
+    --base-nav: #D5B893;
     --logo-color: #f0f7fe;
     --link-color: #e3f4fa;
     --primary-color: #3a435d;
     --text-highlight: #368cd1;
     --title: #e5f3e5;
-    --home-back: #75afc5;
+    --home-back: #8aaacc;
     --members: #16456a;
 }
 
 .darkmode{
     --base-color: #3689a8;
-    --base-variant: #2b5563;
+    --base-variant: #25344f;
     --text-color: white;
     --secondary-text: whitesmoke;
-    --base-nav: #4893cc;
+    --base-nav: #9a8366;
     --logo-color: #rgb(101, 106, 112);
     --link-color: #768e96;
     --primary-color: #8390b6;
     --text-highlight: #78aad5;
     --title: #9ABDDC;
-    --home-back: #4b8197;
+    --home-back: #617891;
     --members: #84b9e1;
 }
 
@@ -38,12 +38,6 @@
 body{
     background-color: var(--base-color);
     color: var(--text-color);
-}
-
-.lato-regular {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .title {
@@ -350,7 +344,7 @@ body{
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: 90vh;
+    height: 100vh;
     background-color:var(--home-back);
     z-index: 1;
     width: 100%;
@@ -360,7 +354,7 @@ body{
 
 .profile__PM {
     float: left;
-    margin-left: 66px;
+    margin-left: 74px;
 }
 
 .profile__PM h2{
@@ -472,7 +466,7 @@ body{
 /*Review*/
 
 .review {
-    background-color: #e3f4fa;
+    background-color: var(--base-variant);
 }
 
 .review .box-container {
