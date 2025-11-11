@@ -2,9 +2,9 @@
     --base-color: #acd1df;
     --base-variant: #e3f4fa;
     --text-color: black;
-    --secondary-text: rgb(55, 54, 54);
+    --secondary-text: #373636;
     --base-nav: #c09b6c;
-    --logo-color: hsl(24, 37%, 47%);
+    --logo-color: #a46f4c;
     --link-color: #b3e0f0;
     --primary-color: #3a435d;
     --text-highlight: #368cd1;
@@ -18,7 +18,7 @@
     --base-variant: #25344f;
     --text-color: white;
     --secondary-text: whitesmoke;
-    --base-nav: #   f4e4c3;
+    --base-nav: #f4e4c3;
     --logo-color: #D5B893;
     --link-color: #768e96;
     --primary-color: #8390b6;
