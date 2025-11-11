@@ -406,13 +406,13 @@ body{
 }
 
 .DV__img{
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
     height: 150px;
     width: 150px;
     margin-top: 30px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .DV__img img{
