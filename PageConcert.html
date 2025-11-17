@@ -6,107 +6,24 @@
     <title>RE: SONATA UI - Daftar Konser di Universitas Indonesia</title> 
     
     <style>
-        /* CSS yang panjang tetap di sini */
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #e0f7fa;
-            color: #2c3e50;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: linear-gradient(to right, #4a90e2, #50e3c2); 
-            color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        .header-logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .header-nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-        }
-        .concert-grid {
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            gap: 20px;
-            padding: 50px 20px;
-        }
-        h2.page-title {
-            color: #2c3e50; 
-            margin-bottom: 30px;
-            font-size: 2em;
-        }
-        .card {
-            background-color: #2c3e50;
-            color: white;
-            border-radius: 20px;
-            width: 90%; 
-            max-width: 650px; 
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            display: flex; 
-            align-items: center;
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card-image-container {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 100px;
-            width: 100px;
-            min-width: 100px;
-            margin-right: 20px;
-            background-color: #ff5722;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5em;
-            font-weight: bold;
-            color: white;
-        }
-        .card-info {
-            flex-grow: 1;
-        }
-        .card-date {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #50e3c2;
-            margin-bottom: 5px;
-        }
-        .card-title {
-            font-size: 1.4em;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .card-location {
-             font-size: 1em;
-             color: #ccc;
-             margin-bottom: 8px;
-        }
-        .card-status {
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        .status-done {
-            color: #50e3c2;
-        }
-        .status-upcoming {
-            color: gold;
-        }
-        .status-tba {
-            color: orange;
-        }
-        
+        /* CSS yang Sama untuk Desain */
+        body { font-family: sans-serif; margin: 0; background-color: #e0f7fa; color: #2c3e50; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: linear-gradient(to right, #4a90e2, #50e3c2); color: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+        .header-logo { font-size: 1.5em; font-weight: bold; }
+        .header-nav a { color: white; text-decoration: none; margin-left: 25px; font-weight: 500; }
+        .concert-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 50px 20px; }
+        h2.page-title { color: #2c3e50; margin-bottom: 30px; font-size: 2em; }
+        .card { background-color: #2c3e50; color: white; border-radius: 20px; width: 90%; max-width: 650px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); padding: 20px; display: flex; align-items: center; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-image-container { border-radius: 10px; overflow: hidden; height: 100px; width: 100px; min-width: 100px; margin-right: 20px; background-color: #ff5722; display: flex; justify-content: center; align-items: center; font-size: 2.5em; font-weight: bold; color: white; }
+        .card-info { flex-grow: 1; }
+        .card-date { font-size: 1.1em; font-weight: bold; color: #50e3c2; margin-bottom: 5px; }
+        .card-title { font-size: 1.4em; margin-bottom: 5px; font-weight: bold; }
+        .card-location { font-size: 1em; color: #ccc; margin-bottom: 8px; }
+        .card-status { font-size: 0.9em; margin-bottom: 10px; }
+        .status-done { color: #50e3c2; }
+        .status-upcoming { color: gold; }
+        .status-tba { color: orange; }
         .detail-button {
             background-color: #4a90e2;
             color: white;
@@ -136,7 +53,7 @@
     </header>
 
     <main class="concert-grid">
-        <h2 class="page-title">Daftar Konser di Universitas Indonesia</h2>
+        <h2 class="page-title">Daftar Konser</h2>
 
         <div class="card">
             <div class="card-image-container">7</div>
@@ -145,7 +62,7 @@
                 <h3 class="card-title">Magis</h3>
                 <p class="card-location">FIB UI</p>
                 <p class="card-status">Status: <strong class="status-done">Telah Terlaksana</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('Magis', 'FIB UI', 'Acara budaya dan seni dari Fakultas Ilmu Budaya. Panggung ini berfokus pada musik akustik dan sastra.','Rp 50.000 (Early Bird) / Rp 75.000 (Normal)')">Lihat Detail & Harga</button>
+                <button class="detail-button" onclick="showConcertDetails('Magis', 'FIB UI', 'Acara puncak budaya dan seni tahunan dari Fakultas Ilmu Budaya. Dimeriahkan oleh panggung musik akustik, teater, dan pembacaan puisi, menciptakan pengalaman yang intim dan sarat makna.')">Lihat Detail Acara</button>
             </div>
         </div>
 
@@ -156,7 +73,7 @@
                 <h3 class="card-title">Aksara</h3>
                 <p class="card-location">POLMED</p>
                 <p class="card-status">Status: <strong class="status-done">Telah Terlaksana</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('Aksara', 'POLMED', 'Pentas seni yang menampilkan band-band mahasiswa dari Politeknik Media Kreatif. Fokus pada genre rock alternatif dan pop-punk.','Rp 45.000 (Mahasiswa) / Rp 60.000 (Umum)')">Lihat Detail & Harga</button>
+                <button class="detail-button" onclick="showConcertDetails('Aksara', 'POLMED', 'Festival seni kreatif yang diinisiasi oleh mahasiswa Politeknik Media Kreatif. Menampilkan kurasi band-band indie lokal, pameran seni digital, dan pasar kuliner mahasiswa.')">Lihat Detail Acara</button>
             </div>
         </div>
 
@@ -167,7 +84,7 @@
                 <h3 class="card-title">AKAMSI</h3>
                 <p class="card-location">Vokasi UI</p>
                 <p class="card-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('AKAMSI', 'Vokasi UI', 'Festival musik tahunan dari Vokasi UI, selalu menampilkan bintang tamu nasional ternama.','Rp 150.000 (Presale 1) / Rp 200.000 (Presale 2)')">Lihat Detail & Harga</button>
+                <button class="detail-button" onclick="showConcertDetails('AKAMSI', 'Vokasi UI', 'Acara musik terbesar di Vokasi UI, selalu menghadirkan Lineup musisi nasional papan atas. AKAMSI dikenal dengan produksi panggung yang spektakuler dan tata cahaya yang futuristik.')">Lihat Detail Acara</button>
             </div>
         </div>
 
@@ -178,7 +95,7 @@
                 <h3 class="card-title">Founder's Night</h3>
                 <p class="card-location">Vokasi UI</p>
                 <p class="card-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('Founder\'s Night', 'Vokasi UI', 'Malam apresiasi bagi pendiri organisasi mahasiswa, biasanya diisi dengan penampilan band jazz dan akustik kampus.','Gratis (Khusus Undangan) / Rp 30.000 (Reguler)')">Lihat Detail & Harga</button>
+                <button class="detail-button" onclick="showConcertDetails('Founder\'s Night', 'Vokasi UI', 'Malam apresiasi yang intim dan eksklusif. Acara ini berfokus pada penampilan band jazz dan akustik kampus terbaik, serta sesi networking dengan alumni dan founder perusahaan.')">Lihat Detail Acara</button>
             </div>
         </div>
         
@@ -189,7 +106,7 @@
                 <h3 class="card-title">The Popstival</h3>
                 <p class="card-location">Hotel Bumiwiyata Depok</p>
                 <p class="card-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('The Popstival', 'Hotel Bumiwiyata Depok', 'Festival Pop terbesar di Depok, menampilkan artis Top 40 Indonesia.','Rp 250.000 (Early Bird) / Rp 350.000 (VIP)')">Lihat Detail & Harga</button>
+                <button class="detail-button" onclick="showConcertDetails('The Popstival', 'Hotel Bumiwiyata Depok', 'Festival musik pop tahunan yang menarik perhatian dari seluruh Jawa Barat. Menghadirkan panggung utama dan panggung mini dengan genre pop, R&B, dan EDM.')">Lihat Detail Acara</button>
             </div>
         </div>
 
@@ -200,24 +117,24 @@
                 <h3 class="card-title">WIREHOUSE 2025</h3>
                 <p class="card-location">Vokasi UI</p>
                 <p class="card-status">Status: <strong class="status-tba">Menunggu Konfirmasi</strong></p>
-                <button class="detail-button" style="background-color: orange;" onclick="showConcertDetails('WIREHOUSE 2025', 'Vokasi UI', 'Acara tahunan terbesar untuk penggemar musik Electronic Dance. Tanggal dan artis masih menunggu pengumuman resmi.','Harga Tiket: TBA (Akan Diumumkan)')">Lihat Detail & Harga</button>
+                <button class="detail-button" style="background-color: orange;" onclick="showConcertDetails('WIREHOUSE 2025', 'Vokasi UI', 'Acara Electronic Dance Music (EDM) terbesar di kampus. Dikenal dengan DJ set internasional dan visual lighting yang imersif. Tanggal dan Lineup masih menunggu rilis.')">Lihat Detail Acara</button>
             </div>
         </div>
 
     </main>
     
     <script>
-        function showConcertDetails(nama, lokasi, deskripsi, harga) {
+        function showConcertDetails(nama, lokasi, deskripsi) {
             // Membuat teks yang akan ditampilkan di jendela pop-up (alert)
             const message = 
                 "KONSER: " + nama + 
                 "\nLOKASI: " + lokasi + 
                 "\n----------------------------------------" +
                 "\nDESKRIPSI: " + deskripsi + 
-                "\n\nHARGA TIKET: " + harga;
+                "\n\n[Untuk info tiket, cek Instagram resmi acara.]"; // Menambahkan catatan Instagram
                 
             alert(message);
         }
     </script>
-    </body>
+</body>
 </html>
