@@ -194,7 +194,7 @@ body{
         height: 3px;
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
-        background: #e3f4fa;
+        background: var(--base-variant);
     }
 
     .navbar__item {
@@ -380,12 +380,6 @@ body{
     margin-bottom: 26px;
 }
 
-.home__container p{
-    text-align: center;
-    margin-top: 2px;
-    color: whitesmoke;
-}
-
 .PM__img{
     position:relative;
     overflow:hidden;
@@ -408,7 +402,11 @@ body{
     margin-bottom: 50px;
 }
 
-.profile__developers h2{
+.profile__developers h4{
+    text-align: center;
+}
+
+.profile__developers h5{
     text-align: center;
 }
 
@@ -487,6 +485,26 @@ body{
     .profile__developers {
         margin-top: 5px;
         padding-left: 1rem;
+    }
+
+    .profiles__section {
+        padding-left: 5px;
+    }
+
+    .DV__img {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 1124px) {
+    .home__container{
+        height: 150vh;
+    }
+    
+    .DV__img {
+        height: 120px;
+        width: 120px;
     }
 }
 
