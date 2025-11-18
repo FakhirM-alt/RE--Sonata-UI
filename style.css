@@ -41,10 +41,10 @@ body{
 }
 
 .title {
-    text-align: center;
+    text-align: left;
     padding: 3rem;
     font-size: 50px;
-    color: darkblue;
+    color: var(--members);
 }
 
 .navbar {
@@ -366,11 +366,18 @@ body{
 
 .profile__PM {
     float: left;
-    margin-left: 74px;
+    padding: 25px;
+    border: 2px solid;
+    width: 500px;
+    background-color: var(--primary-color);
 }
 
 .profile__PM h2{
     text-align: center;
+}
+
+.profile__PM p{
+    text-align: justify;
 }
 
 .home__container h2{
