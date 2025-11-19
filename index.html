@@ -6,7 +6,10 @@
     <title>RE: SONATA UI</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="darkmode.js" defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+
+    <!--SWIPER CSSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -28,7 +31,7 @@
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="/" class="navbar__links">
+                    <a href="#about" class="navbar__links">
                         About
                     </a>
                 </li>
@@ -67,29 +70,130 @@
         </div>
     </section>
 
-    <section class="review" id="review">
+    <section class="coming_soon" id="coming_soon">
         <h2 class="title">Coming Soon: </h2>
 
-        <div class= "container">
-            <div class="card-wrapper">
-                <ul class="card-list">
-                    <li class="card-item">
-                        <a href="#" class="card-link">
-                            <img src="Images/Concert Images/images-1.jpg" alt="Concert Image" class="card-image">
+        <div class="container swiper">
+            <div class="wrapper">
+                <div class="card-list swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="card-image">
+                            <img src="Images/Concert Images/crowd-partying-stage-lights-live-600nw-2297236461.webp" alt="Concert 1">
+                            <p class="card-tag">Coming Soon</p>
+                        </div>
 
-                            <p class="badge">Coming Soon</p>
-                            <h2 class="card-title">Lorem ipsum dolor sit amet.</h2>
+                        <div class="card-content">
+                            <h3 class="card-title">Concert 1</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet, 
+                                consectetuer adipiscing elit. Aenean commodo 
+                                ligula eget dolor. Aenean massa. Cum sociis natoque 
+                                penatibus et magnis dis parturient montes, nascetur 
+                                ridiculus
+                            </p>
 
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
-                    </li>
-                </ul>
+                            <div class="card-footer">
+                                <a href="#" class="card-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="card-image">
+                            <img src="Images/Concert Images/images-1.jpg" alt="Concert 1">
+                            <p class="card-tag">Coming Soon</p>
+                        </div>
+
+                        <div class="card-content">
+                            <h3 class="card-title">Concert 2</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet, 
+                                consectetuer adipiscing elit. Aenean commodo 
+                                ligula eget dolor. Aenean massa. Cum sociis natoque 
+                                penatibus et magnis dis parturient montes, nascetur 
+                                ridiculus
+                            </p>
+
+                            <div class="card-footer">
+                                <a href="#" class="card-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="card-image">
+                            <img src="Images/Concert Images/images.jpg" alt="Concert 1">
+                            <p class="card-tag">Coming Soon</p>
+                        </div>
+
+                        <div class="card-content">
+                            <h3 class="card-title">Concert 3</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet, 
+                                consectetuer adipiscing elit. Aenean commodo 
+                                ligula eget dolor. Aenean massa. Cum sociis natoque 
+                                penatibus et magnis dis parturient montes, nascetur 
+                                ridiculus
+                            </p>
+
+                            <div class="card-footer">
+                                <a href="#" class="card-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="card-image">
+                            <img src="Images/Concert Images/crowd-partying-stage-lights-live-600nw-2297236461.webp" alt="Concert 1">
+                            <p class="card-tag">Coming Soon</p>
+                        </div>
+
+                        <div class="card-content">
+                            <h3 class="card-title">Concert 4</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet, 
+                                consectetuer adipiscing elit. Aenean commodo 
+                                ligula eget dolor. Aenean massa. Cum sociis natoque 
+                                penatibus et magnis dis parturient montes, nascetur 
+                                ridiculus
+                            </p>
+
+                            <div class="card-footer">
+                                <a href="#" class="card-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="card-image">
+                            <img src="Images/Concert Images/crowd-partying-stage-lights-live-600nw-2297236461.webp" alt="Concert 1">
+                            <p class="card-tag">Coming Soon</p>
+                        </div>
+
+                        <div class="card-content">
+                            <h3 class="card-title">Concert 5</h3>
+                            <p class="card-text">Lorem ipsum dolor sit amet, 
+                                consectetuer adipiscing elit. Aenean commodo 
+                                ligula eget dolor. Aenean massa. Cum sociis natoque 
+                                penatibus et magnis dis parturient montes, nascetur 
+                                ridiculus
+                            </p>
+
+                            <div class="card-footer">
+                                <a href="#" class="card-button">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
             </div>
         </div>
+
     </section>
 
     <!--Home Page-->
-    <section class="home" id="home">
+ <!--  <section class="home" id="about">
 
         <h1>About</h1>
 
@@ -167,10 +271,15 @@
             </div>
 
         </div>
-    </section>
+    </section> --> 
     
-    <script src="sistem.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+
+    <script src="sistem.js"></script>
 </body>
 </html>
 

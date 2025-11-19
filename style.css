@@ -40,6 +40,10 @@ body{
     color: var(--text-color);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .title {
     text-align: left;
     padding: 3rem;
@@ -529,41 +533,159 @@ body{
 
 /*Review*/
 
-.review {
+.coming_soon {
     background-color: var(--base-variant);
 }
 
-.review .box-container {
+.container{
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
 }
 
-.review .box-container .box {
-    text-align: center;
-    padding: 1rem;
-    border: .1rem solid var(--text-color);
-    box-shadow: var(--box-shadow);
-    flex: 1 1 30rem;
-    border-radius: 0.5rem;
-    margin-top: 6rem;
+.card .card-image {
+    position: relative;
 }
 
-.review .box-container .box img{
-    height: 12rem;
-    width: 12rem;
-    border: 1px solid var(--text-color);
-    margin-top: -8rem;
-    object-fit: contain;
-    border-radius: 5%;
+.card .card-image img {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
-.review .box-container .box h3{
-    font-size: 2.5rem;
-    color: #16456a;
-    padding: 0.5rem 0;
+.card .card-image .card-tag {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    color: #6366f1;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
-.review .box-container .box p{
-    font-size: 1.5rem;
+.card .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px 25px;
+}
+
+.card .card-content .card-title {
+    color: #111111;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.card .card-content .card-text {
+    color: #747474;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card .card-content .card-footer {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: auto;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0,0, 0, 0.08);
+}
+
+.card .card-content .card-button {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.81rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card .card-content .card-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
+}
+
+.wrapper {
+    max-width: 1100px;
+    padding: 20px 10px;
+    margin: 0 60px 35px;
+    overflow: hidden;
+}
+
+.wrapper .card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0,0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.wrapper .card:hover {
+    transform: translateY(-10px);
+}
+
+.wrapper .swiper-pagination-bullet {
+    height: 15px;
+    width: 15px;
+    overflow: hidden;
+    opacity: 1;
+    background: #8183F8;
+}
+
+.wrapper .swiper-pagination-bullet-active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #6366f1;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: autoplay-loading 5s linear forwards;
+}
+
+.container:hover .wrapper .swiper-pagination-bullet-active::before {
+    animation-play-state: paused;
+}
+
+@keyframes autoplay-loading {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.wrapper :where(.swiper-button-prev, .swiper-button-next) {
+    color: #6366f1;
+    margin-top: -35px;
+    transition: all 0.3s ease;
+}
+
+.wrapper :where(.swiper-button-prev, .swiper-button-next):hover {
+    color: #8b5cf6;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        margin: 0 10px 25px;
+    }
+
+    .wrapper :where(.swiper-button-prev, .swiper-button-next) {
+        display: none;
+    }
 }
