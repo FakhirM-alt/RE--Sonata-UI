@@ -3,6 +3,7 @@
     --text-color: #2c3e50;
     --headline-color: white;
     --b-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    --button-dark: #4a90e2;
 }
 
 .darkmode{
@@ -10,6 +11,7 @@
     --text-color: #3e8edd;
     --headline-color: black;
     --b-shadow: 0 8px 15px rgba(219, 216, 216, 0.446);
+    --button-dark: #356193;
 }
 
 body {
@@ -44,6 +46,10 @@ h2.page-title {
     display: flex; 
     align-items: center;
     transition: transform 0.2s;
+}
+
+.unknown {
+    background-color: #4a5a70;
 }
         
 .card:hover {
@@ -90,30 +96,35 @@ h2.page-title {
     font-weight: 300;
 }
 
-        .card-status {
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        .status-done {
-            color: #50e3c2;
-        }
-        .status-upcoming {
-            color: gold;
-        }
-        .status-tba {
-            color: orange;
-        }
+.card-status {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
         
-        .detail-button {
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .detail-button:hover {
-            background-color: #3b74c4;
-        }
+.status-done {
+    color: #50e3c2;
+}
+        
+.status-upcoming {
+    color: gold;
+}
+       
+.status-tba {
+    color: orange;
+}
+        
+        
+.detail-button {
+    background-color: var(--button-dark);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+        
+.detail-button:hover {
+    background-color: #3b74c4;
+}
