@@ -4,14 +4,15 @@
     --headline-color: white;
     --b-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     --button-dark: #4a90e2;
+    --unknown-status: #4a5a70;
 }
-
 .darkmode{
     --base-color: #25344f;
     --text-color: #3e8edd;
     --headline-color: black;
     --b-shadow: 0 8px 15px rgba(219, 216, 216, 0.446);
     --button-dark: #356193;
+    --unknown-status: #829ec6;
 }
 
 body {
@@ -49,7 +50,8 @@ h2.page-title {
 }
 
 .unknown {
-    background-color: #4a5a70;
+    color: var(--unknown-status);
+    color: var(--headline-color);
 }
         
 .card:hover {
