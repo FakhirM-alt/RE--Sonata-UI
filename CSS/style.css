@@ -355,6 +355,7 @@ html {
     padding-top: 2rem;
     text-align: center;
     font-size: 3rem;
+    color: var(--text-color);
 }
 
 .home__container {
@@ -381,10 +382,6 @@ html {
 
 .profile__PM h2{
     text-align: center;
-}
-
-.profile__PM p{
-    text-align: justify;
 }
 
 .home__container h2{
@@ -440,6 +437,7 @@ html {
     height: 150px;
     width: 150px;
     margin: 19px;
+    border: 3px solid;
 }
 
 .DV__img img{

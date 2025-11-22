@@ -1,6 +1,6 @@
 :root{
     --base-color: #e0f7fa;
-    --text-color: #2c3e50;
+    --title-color: #2c3e50;
     --headline-color: white;
     --b-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     --button-dark: #4a90e2;
@@ -8,7 +8,7 @@
 }
 .darkmode{
     --base-color: #25344f;
-    --text-color: #3e8edd;
+    --title-color: #3e8edd;
     --headline-color: black;
     --b-shadow: 0 8px 15px rgba(219, 216, 216, 0.446);
     --button-dark: #356193;
@@ -18,8 +18,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: var(--base-color) ;
-    color: var(--text-color);
+    background-color: var(--base-color);
 }
         
 .concert-grid {
@@ -30,14 +29,14 @@ body {
     padding: 50px 20px;
 }
     
-h2.page-title {
-    color: var(--text-color);
+.page-title{
     margin-bottom: 30px;
     font-size: 2rem;
+    color: var(--title-color);
 }
         
 .card {
-    background-color: var(--text-color);
+    background-color: var(--title-color);
     color: var(--headline-color);
     border-radius: 20px;
     width: 90%; 
