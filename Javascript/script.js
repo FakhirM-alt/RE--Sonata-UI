@@ -1,4 +1,5 @@
 const swiper = new Swiper('.wrapper', {
+  centeredSlides: true,
   loop: true,
   spaceBetween: 30,
 

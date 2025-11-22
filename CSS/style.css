@@ -83,7 +83,6 @@ html {
     color: var(--logo-color);
     display: flex;
     align-items: center;
-    cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
 }
@@ -575,7 +574,7 @@ html {
     background-color: var(--base-variant);
 }
 
-.container{
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -659,7 +658,7 @@ html {
 .wrapper {
     max-width: 1100px;
     padding: 20px 10px;
-    margin: 0 60px 35px;
+    margin: 0 150px 20px;
     overflow: hidden;
 }
 
@@ -676,6 +675,7 @@ html {
 .wrapper .card:hover {
     transform: translateY(-10px);
 }
+
 
 .wrapper .swiper-pagination-bullet {
     height: 15px;
