@@ -2,15 +2,13 @@
     --base-color: #8aaacc;
     --title-color: #2c3e50;
     --headline-color: white;
-    --b-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     --button-dark: #4a90e2;
     --unknown-status: #4a5a70;
 }
 .darkmode{
     --base-color: #617891;
-    --title-color: #3e8edd;
+    --title-color: #388fe6;
     --headline-color: black;
-    --b-shadow: 0 8px 15px rgba(219, 216, 216, 0.446);
     --button-dark: #356193;
     --unknown-status: #829ec6;
 }
@@ -41,7 +39,7 @@ body {
     border-radius: 20px;
     width: 90%; 
     max-width: 650px; 
-    box-shadow: var(--b-shadow);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     padding: 20px;
     display: flex; 
     align-items: center;
