@@ -28,6 +28,7 @@ body {
 .page-title{
     margin-bottom: 30px;
     padding-left: 30px;
+    text-align: center;
     font-size: 2rem;
     color: var(--title-color);
 }
