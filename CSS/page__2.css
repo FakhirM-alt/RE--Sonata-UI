@@ -4,6 +4,7 @@
     --headline-color: white;
     --button-dark: #4a90e2;
     --unknown-status: #4a5a70;
+    --complete-stat: #2feb1b;
 }
 .darkmode{
     --base-color: #617891;
@@ -11,6 +12,7 @@
     --headline-color: black;
     --button-dark: #356193;
     --unknown-status: #829ec6;
+    --complete-stat: #69e67e;
 }
 
 body {
@@ -25,12 +27,18 @@ body {
     align-items: center;
 }
     
-.page-title{
+.page-title {
     margin-bottom: 30px;
     padding-left: 30px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 34px;
     color: var(--title-color);
+}
+
+.green {
+    color: var(--complete-stat);
+    font-size: 2rem;
+    padding-left: 30px;
 }
         
 .cards {
