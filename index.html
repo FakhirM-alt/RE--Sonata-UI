@@ -266,12 +266,11 @@
     </section>
 
     <!--Concert Page-->
-    <section class="" id="event">
+    <section class="concert-grid" id="event">
         <h2 class="page-title">Daftar Konser di Universitas Indonesia</h2>
 
-        <div class="concert-grid swiper">
-            <div class="swiper">
-                <div class="card-list swiper-wrapper">
+
+        <div class="concert-container">
 
                     <div class="cards swiper-slide">
                         <div class="cards-image-container">18</div>
@@ -285,7 +284,7 @@
                     </div>
 
                     <div class="cards swiper-slide">
-                        <div class="cards-image-container">18</div>
+                        <div class="cards-image-container">26</div>
                         <div class="cards-info">
                             <p class="cards-date">26 September 2025</p>
                             <h3 class="cards-title">Magis Vol.2</h3>
@@ -296,7 +295,7 @@
                     </div>
 
                     <div class="cards swiper-slide">
-                        <div class="cards-image-container">18</div>
+                        <div class="cards-image-container">11</div>
                         <div class="cards-info">
                             <p class="cards-date">11 Oktober 2025</p>
                             <h3 class="cards-title">Promed Sejalan</h3>
@@ -305,6 +304,30 @@
                             <button class="detail-button" onclick="showConcertDetails('UI Music Fair', 'Chillax Sudirman', 'Acara budaya dan seni dari musikal sebagai performance untuk semua orang nonton.','Gratis')">Lihat Detail & Harga</button>
                         </div>
                     </div>
+
+                    <div class="cards swiper-slide">
+                        <div class="cards-image-container">9</div>
+                        <div class="cards-info">
+                            <p class="cards-date">9 November 2025</p>
+                            <h3 class="cards-title">Jazz Go To Campus</h3>
+                            <p class="cards-location">FEB UI</p>
+                            <p class="cards-status">Status: <strong class="status-upcoming">Segera</strong></p>
+                            <button class="detail-button" onclick="showConcertDetails('AKAMSI', 'Vokasi UI', 'Festival musik tahunan dari Vokasi UI, selalu menampilkan bintang tamu nasional ternama.','Rp 150.000 (Presale 1) / Rp 200.000 (Presale 2)')">Lihat Detail & Harga</button>
+                        </div>
+                    </div>
+
+                    <div class="cards swiper-slide">
+                        <div class="cards-image-container">25</div>
+                        <div class="cards-info">
+                            <p class="cards-date">25 November 2025</p>
+                            <h3 class="cards-title">AKAMSI</h3>
+                            <p class="cards-location">Vokasi UI</p>
+                            <p class="cards-status">Status: <strong class="status-upcoming">Segera</strong></p>
+                            <button class="detail-button" onclick="showConcertDetails('AKAMSI', 'Vokasi UI', 'Festival musik tahunan dari Vokasi UI, selalu menampilkan bintang tamu nasional ternama.','Rp 150.000 (Presale 1) / Rp 200.000 (Presale 2)')">Lihat Detail & Harga</button>
+                        </div>
+                    </div>
+
+
 
                     <div class="cards swiper-slide">
                         <div class="cards-image-container">15</div>
@@ -339,29 +362,9 @@
                         </div>
                     </div>
 
-                    <div class="cards swiper-slide">
-                        <div class="cards-image-container">25</div>
-                        <div class="cards-info">
-                            <p class="cards-date">9 November 2025</p>
-                            <h3 class="cards-title">Jazz Go To Campus</h3>
-                            <p class="cards-location">FEB UI</p>
-                            <p class="cards-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                            <button class="detail-button" onclick="showConcertDetails('AKAMSI', 'Vokasi UI', 'Festival musik tahunan dari Vokasi UI, selalu menampilkan bintang tamu nasional ternama.','Rp 150.000 (Presale 1) / Rp 200.000 (Presale 2)')">Lihat Detail & Harga</button>
-                        </div>
-                    </div>
 
-                    <div class="cards swiper-slide">
-                        <div class="cards-image-container">25</div>
-                        <div class="cards-info">
-                            <p class="cards-date">25 November 2025</p>
-                            <h3 class="cards-title">AKAMSI</h3>
-                            <p class="cards-location">Vokasi UI</p>
-                            <p class="cards-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                            <button class="detail-button" onclick="showConcertDetails('AKAMSI', 'Vokasi UI', 'Festival musik tahunan dari Vokasi UI, selalu menampilkan bintang tamu nasional ternama.','Rp 150.000 (Presale 1) / Rp 200.000 (Presale 2)')">Lihat Detail & Harga</button>
-                        </div>
-                    </div>
 
-                    <div class="cards swiper-slide">
+                                    <div class="cards swiper-slide">
                         <div class="cards-image-container">28</div>
                         <div class="cards-info">
                             <p class="cards-date">28 November 2025</p>
@@ -392,13 +395,6 @@
                             <p class="cards-status">Status: <strong class="status-tba">Menunggu Konfirmasi</strong></p>
                             <button class="detail-button" style="background-color: orange;" onclick="showConcertDetails('WIREHOUSE 2025', 'Vokasi UI', 'Acara tahunan terbesar untuk penggemar musik Electronic Dance. Tanggal dan artis masih menunggu pengumuman resmi.','Harga Tiket: TBA (Akan Diumumkan)')">Lihat Detail & Harga</button>
                         </div>
-                    </div>
-                </div>
-
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </div>
 
@@ -423,7 +419,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <script src="Javascript/script.js"></script>
-
 
     <script src="Javascript/sistem.js"></script>
 </body>

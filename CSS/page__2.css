@@ -15,16 +15,22 @@
     --complete-stat: #69e67e;
 }
 
-body {
-    font-family: sans-serif;
-    margin: 0;
+.concert-grid {
     background-color: var(--base-color);
 }
-        
-.concert-grid {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+.concert-list {
+    float: left;
+    padding-left: 25px;
+    margin-right: 20px;
+}
+
+.concert-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 20px; 
+    padding-left: 30px;
+    padding-right: 30px;
 }
     
 .page-title {
@@ -121,8 +127,7 @@ body {
 .status-tba {
     color: orange;
 }
-        
-        
+              
 .detail-button {
     background-color: var(--button-dark);
     color: white;
@@ -136,4 +141,11 @@ body {
         
 .detail-button:hover {
     background-color: #3b74c4;
+}
+
+#loading-indicator {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #888;
 }
