@@ -21,10 +21,8 @@ body {
         
 .concert-grid {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row;
     align-items: center;
-    gap: 20px;
-    padding: 50px 20px;
 }
     
 .page-title{
@@ -33,7 +31,7 @@ body {
     color: var(--title-color);
 }
         
-.card {
+.cards {
     background-color: var(--title-color);
     color: var(--headline-color);
     border-radius: 20px;
@@ -44,6 +42,7 @@ body {
     display: flex; 
     align-items: center;
     transition: transform 0.2s;
+    margin-bottom: 30px;
 }
 
 .unknown {
@@ -51,11 +50,11 @@ body {
     color: var(--headline-color);
 }
         
-.card:hover {
+.cards:hover {
     transform: translateY(-5px);
 }
         
-.card-image-container {
+.cards-image-container {
     border-radius: 10px;
     overflow: hidden;
     height: 100px;
@@ -71,31 +70,31 @@ body {
     color: var(--headline-color);
 }
 
-.card-info {
+.cards-info {
     flex-grow: 1;
 }
         
-.card-date {
+.cards-date {
     font-size: 1.1em;
     font-weight: bold;
     color: #50e3c2;
     margin-bottom: 5px;
 }
         
-.card-title {
+.cards-title {
     font-size: 1.4em;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.card-location {
+.cards-location {
     font-size: 1em;
     color: #ccc;
     margin-bottom: 8px;
     font-weight: 300;
 }
 
-.card-status {
+.cards-status {
     font-size: 0.9em;
     margin-bottom: 10px;
 }
