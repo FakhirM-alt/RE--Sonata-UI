@@ -18,6 +18,7 @@
 .concert-grid {
     background-color: var(--base-color);
     padding-bottom: 30px;
+    padding-top: 33px;
 }
 
 .concert-list {
