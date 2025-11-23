@@ -10,6 +10,7 @@
     --text-highlight: #d2a162;
     --title: #e5f3e5;
     --home-back: #8aaacc;
+    --transition-page: linear-gradient(180deg, #e3f4fa 0%, #8aaacc 100%);
     --members: #16456a;
     --button-swiper: #617891;
     --pangination-bullet: #25344F;
@@ -27,6 +28,7 @@
     --text-highlight: #f0c775;
     --title: #9ABDDC;
     --home-back: #617891;
+    --transition-page: linear-gradient(180deg, #25344f 0%, #617891 100%);
     --members: #84b9e1;
     --button-swiper: #3d547e;
     --pangination-bullet: #617891;
@@ -569,7 +571,7 @@ html {
 /*Review*/
 
 .coming_soon {
-    background-color: var(--base-variant);
+    background: var(--transition-page);
 }
 
 .container {
