@@ -410,8 +410,9 @@ html {
 
 .profile__developers {
     padding-top: 50px;
-    margin-left: 150px;
+    margin-left: 240px;
     margin-bottom: 50px;
+    width: 75%;
 }
 
 .profile__developers h4{
