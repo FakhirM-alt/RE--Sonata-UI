@@ -3,137 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RE: SONATA UI - Daftar Konser di Universitas Indonesia</title> 
+    <title>RE: SONATA UI - CONCERT STAGES 2025</title> 
     
     <style>
-        /* CSS yang Sama untuk Desain */
-        body { font-family: sans-serif; margin: 0; background-color: #e0f7fa; color: #2c3e50; }
-        .header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: linear-gradient(to right, #4a90e2, #50e3c2); color: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
-        .header-logo { font-size: 1.5em; font-weight: bold; }
-        .header-nav a { color: white; text-decoration: none; margin-left: 25px; font-weight: 500; }
-        .concert-grid { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 50px 20px; }
-        h2.page-title { color: #2c3e50; margin-bottom: 30px; font-size: 2em; }
-        .card { background-color: #2c3e50; color: white; border-radius: 20px; width: 90%; max-width: 650px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); padding: 20px; display: flex; align-items: center; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .card-image-container { border-radius: 10px; overflow: hidden; height: 100px; width: 100px; min-width: 100px; margin-right: 20px; background-color: #ff5722; display: flex; justify-content: center; align-items: center; font-size: 2.5em; font-weight: bold; color: white; }
-        .card-info { flex-grow: 1; }
-        .card-date { font-size: 1.1em; font-weight: bold; color: #50e3c2; margin-bottom: 5px; }
-        .card-title { font-size: 1.4em; margin-bottom: 5px; font-weight: bold; }
-        .card-location { font-size: 1em; color: #ccc; margin-bottom: 8px; }
-        .card-status { font-size: 0.9em; margin-bottom: 10px; }
-        .status-done { color: #50e3c2; }
-        .status-upcoming { color: gold; }
-        .status-tba { color: orange; }
+        /* --- SKEMA WARNA SENADA (Reverted) --- */
+        :root {
+            --color-primary: #4a90e2; /* Biru */
+            --color-accent: #50e3c2; /* Cyan Aksen */
+            --color-dark: #2c3e50; /* Dark Navy (Card BG) */
+            --color-background-light: #e0f7fa; /* Background Pale Blue */
+            --color-text-light: #ffffff;
+            --color-text-dark: #2c3e50;
+        }
+
+        /* --- BACKGROUND HEBOH & CONFETTI (CSS) --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0; 
+            color: var(--color-text-dark); 
+            min-height: 100vh;
+            background: var(--color-background-light); 
+            position: relative;
+            overflow-x: hidden;
+            /* Gradient subtle untuk kedalaman */
+            background-image: radial-gradient(circle at 10% 10%, rgba(74, 144, 226, 0.15) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 90%, rgba(80, 227, 194, 0.2) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Confetti Effect Container */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1; /* Di bawah header, di atas background */
+        }
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--color-accent);
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+        /* Definisikan beberapa tipe confetti dengan warna dan delay berbeda */
+        .confetti:nth-child(3n) { background-color: var(--color-primary); width: 6px; height: 6px; }
+        .confetti:nth-child(5n) { background-color: #FF77A9; width: 10px; height: 10px; border-radius: 50%; }
+
+        /* Keyframes untuk animasi jatuh */
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* --- Header dan Navigasi --- */
+        .header {
+            display: flex; justify-content: space-between; align-items: center; padding: 20px 50px;
+            background: var(--color-dark); /* Navy gelap */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            color: var(--color-text-light);
+        }
+        .header-logo { font-size: 1.8em; font-weight: 800; color: var(--color-accent); text-shadow: 0 0 5px rgba(80, 227, 194, 0.5); }
+        .header-nav a { color: var(--color-text-light); text-decoration: none; margin-left: 30px; font-weight: 600; text-transform: uppercase; transition: color 0.3s; }
+        .header-nav a:hover { color: var(--color-accent); }
+        
+        /* --- DAFTAR KONSER --- */
+        .concert-section { max-width: 1000px; margin: 50px auto; padding: 0 20px; position: relative; z-index: 10; }
+        .page-title { text-align: center; font-size: 3em; color: var(--color-dark); margin-bottom: 40px; }
+        .section-title { 
+            font-size: 2.2em; 
+            font-weight: 700;
+            color: var(--color-primary); 
+            border-bottom: 5px solid var(--color-accent); 
+            padding-bottom: 10px; 
+            margin-top: 40px; 
+            margin-bottom: 30px;
+        }
+        
+        .concert-card-simple {
+            background-color: var(--color-dark); /* Navy gelap untuk kontras */
+            color: var(--color-text-light);
+            border: 2px solid var(--color-accent);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .concert-card-simple:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border-color: var(--color-primary);
+        }
+        .concert-info h4 { margin: 0 0 5px 0; font-size: 1.4em; color: var(--color-accent); font-weight: 700; }
+        .concert-info p { margin: 0; font-size: 1em; color: #BBB; }
+        
+        /* --- GAYA TOMBOL --- */
         .detail-button {
-            background-color: #4a90e2;
+            background: var(--color-primary);
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 12px 25px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            transition: background-color 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.4);
+            transition: all 0.3s;
         }
-        .detail-button:hover {
-            background-color: #3b74c4;
+        .detail-button:hover { background: #3c7ccf; box-shadow: 0 6px 15px rgba(74, 144, 226, 0.6); transform: translateY(-2px); }
+        .instagram-button {
+            background: var(--color-accent); 
+            color: var(--color-dark);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px; 
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(80, 227, 194, 0.5);
+            transition: all 0.3s;
+        }
+        .instagram-button:hover { background: #40d0b0; box-shadow: 0 6px 15px rgba(80, 227, 194, 0.8); }
+
+        /* --- CSS MODAL (Tetap Gelap untuk Kontras Panggung) --- */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); padding-top: 20px; }
+        .modal-content {
+            background-color: #1A1A2E; 
+            margin: 5% auto;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 0 50px rgba(74, 144, 226, 0.7); 
+            display: flex;
+            color: white;
+            border: 2px solid var(--color-accent);
+            overflow: hidden;
+            z-index: 1010;
+        }
+        .close { color: #BBB; font-size: 40px; font-weight: 100; position: absolute; top: 15px; right: 30px; transition: color 0.3s; }
+        .close:hover { color: var(--color-accent); cursor: pointer; }
+        
+        .modal-left { flex: 1; padding: 30px 20px; text-align: center; background: var(--color-dark); min-width: 250px; }
+        .modal-right { flex: 3; padding: 35px; position: relative; }
+        
+        .modal-poster { width: 100%; max-width: 180px; height: auto; border-radius: 10px; border: 3px solid var(--color-accent); box-shadow: 0 0 10px var(--color-accent); margin-bottom: 20px;}
+        .modal-date-location { font-size: 1.1em; margin-bottom: 10px; color: var(--color-accent); }
+        .modal-left h2 { color: var(--color-primary); font-size: 1.8em; }
+
+        /* List Harga di Modal */
+        .modal-price-list { list-style: none; padding: 0; text-align: left; }
+        .modal-price-list li { 
+            margin-bottom: 10px; padding: 8px 15px; 
+            background-color: rgba(74, 144, 226, 0.15); /* Light Blue BG */
+            border-radius: 5px; 
+            border-left: 4px solid var(--color-accent);
+            font-weight: 600;
+        }
+        
+        /* Header Deskripsi Modal Kanan */
+        .modal-right h2 { color: var(--color-primary); border-bottom: 2px solid var(--color-accent); padding-bottom: 10px; margin-top: 0; font-size: 1.8em; }
+        .modal-description-text { font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #FFF; }
+        
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .header { padding: 15px 20px; }
+            .modal-content { flex-direction: column; width: 95%; margin: 5% auto; }
+            .modal-right { padding: 20px; padding-top: 60px; }
+            .confetti-container { display: none; } /* Matikan Confetti di HP untuk performa */
         }
     </style>
 </head>
 <body>
 
+    <div class="confetti-container" id="confetti-container"></div>
+    
     <header class="header">
         <div class="header-logo">RE: SONATA UI</div>
         <nav class="header-nav">
-            <a href="#">Home</a>
-            <a href="#" class="active">Concert</a>
-            <a href="#">About</a>
-            <a href="#">Contacts</a>
+            <a href="#">HOME</a>
+            <a href="#" class="active">CONCERT</a>
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACTS</a>
         </nav>
-        <div class="theme-toggle">☀️</div>
+        <div class="theme-toggle">🎉</div>
     </header>
 
-    <main class="concert-grid">
-        <h2 class="page-title">Daftar Konser</h2>
+    <main class="concert-section">
+        <h1 class="page-title">CONCERT STAGES: NOVEMBER 2025</h1>
 
-        <div class="card">
-            <div class="card-image-container">7</div>
-            <div class="card-info">
-                <p class="card-date">7 November 2025</p>
-                <h3 class="card-title">Magis</h3>
-                <p class="card-location">FIB UI</p>
-                <p class="card-status">Status: <strong class="status-done">Telah Terlaksana</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('Magis', 'FIB UI', 'Acara puncak budaya dan seni tahunan dari Fakultas Ilmu Budaya. Dimeriahkan oleh panggung musik akustik, teater, dan pembacaan puisi, menciptakan pengalaman yang intim dan sarat makna.')">Lihat Detail Acara</button>
-            </div>
+        <h2 class="section-title">✨ COMING SOON - GET READY TO PARTY!</h2>
+        
+        <div class="concert-card-simple">
+            <div class="concert-info"><h4>ENTHUFEST (16 OKTOBER)</h4><p>FIB UI | Tiket: GRATIS</p></div>
+            <button class="detail-button" 
+                onclick="openModal('ENTHUFEST', '16 Oktober 2025', 'FIB UI', 'https://www.instagram.com/enthufest?igsh=OGVjN2V6NGNidWMw', 'Acara seni dan budaya terbesar yang diselenggarakan oleh Fakultas Ilmu Budaya. Penuh dengan musik, pameran kriya, dan pertunjukan teater. Jangan lewatkan energi panggungnya!', 'GRATIS (Wajib Registrasi)', 'https://via.placeholder.com/180x250/4a90e2/FFFFFF?text=ENTHU')">DETAILS & LINKS</button>
         </div>
 
-        <div class="card">
-            <div class="card-image-container">15</div>
-            <div class="card-info">
-                <p class="card-date">15 November 2025</p>
-                <h3 class="card-title">Aksara</h3>
-                <p class="card-location">POLMED</p>
-                <p class="card-status">Status: <strong class="status-done">Telah Terlaksana</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('Aksara', 'POLMED', 'Festival seni kreatif yang diinisiasi oleh mahasiswa Politeknik Media Kreatif. Menampilkan kurasi band-band indie lokal, pameran seni digital, dan pasar kuliner mahasiswa.')">Lihat Detail Acara</button>
-            </div>
+        <div class="concert-card-simple">
+            <div class="concert-info"><h4>WIREJAM (30 OKTOBER)</h4><p>Vokasi UI | Tiket: Cek Instagram</p></div>
+            <button class="detail-button" 
+                onclick="openModal('WIREJAM', '30 Oktober 2025', 'Vokasi UI', 'https://www.instagram.com/wirestudio.music?igsh=MTBuMjRmc3loNTkwNg==', 'Konser studio eksklusif dari Wirestudio.music. Sesi jamming yang intim namun intens, selalu menampilkan kejutan dari musisi-musisi kampus terpanas.', 'Cek Instagram Resmi untuk Harga', 'https://via.placeholder.com/180x250/50e3c2/2c3e50?text=WIREJAM')">DETAILS & LINKS</button>
         </div>
 
-        <div class="card">
-            <div class="card-image-container">25</div>
-            <div class="card-info">
-                <p class="card-date">25 November 2025</p>
-                <h3 class="card-title">AKAMSI</h3>
-                <p class="card-location">Vokasi UI</p>
-                <p class="card-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('AKAMSI', 'Vokasi UI', 'Acara musik terbesar di Vokasi UI, selalu menghadirkan Lineup musisi nasional papan atas. AKAMSI dikenal dengan produksi panggung yang spektakuler dan tata cahaya yang futuristik.')">Lihat Detail Acara</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-image-container">28</div>
-            <div class="card-info">
-                <p class="card-date">28 November 2025</p>
-                <h3 class="card-title">Founder's Night</h3>
-                <p class="card-location">Vokasi UI</p>
-                <p class="card-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('Founder\'s Night', 'Vokasi UI', 'Malam apresiasi yang intim dan eksklusif. Acara ini berfokus pada penampilan band jazz dan akustik kampus terbaik, serta sesi networking dengan alumni dan founder perusahaan.')">Lihat Detail Acara</button>
-            </div>
+        <div class="concert-card-simple" style="border: 2px solid #FFD700;">
+            <div class="concert-info"><h4>JGTC FESTIVAL (9 NOVEMBER)</h4><p>FEB UI | Status: SOLD OUT!</p></div>
+            <button class="detail-button" style="background: #FFD700; color: var(--color-dark);"
+                onclick="openModal('JGTC FESTIVAL', '9 November 2025', 'FEB UI', 'https://www.instagram.com/jgtcfestival?igsh=dm9kaG1kZGthczEy', 'Festival musik jazz terbesar se-Indonesia, diselenggarakan oleh FEB UI. Penuh dengan musisi legendaris dan tata panggung kelas dunia. Tiket sudah ludes!', 'Presale 1: IDR 135.000 (Sold Out), Regular: IDR 165.000 (Sold Out), Gold: IDR 375.000 (Sold Out), Platinum: IDR 530.000 (Sold Out)', 'https://via.placeholder.com/180x250/FFD700/2c3e50?text=JGTC')">DETAILS & LINKS</button>
         </div>
         
-        <div class="card">
-            <div class="card-image-container">30</div>
-            <div class="card-info">
-                <p class="card-date">30 November 2025</p>
-                <h3 class="card-title">The Popstival</h3>
-                <p class="card-location">Hotel Bumiwiyata Depok</p>
-                <p class="card-status">Status: <strong class="status-upcoming">Segera</strong></p>
-                <button class="detail-button" onclick="showConcertDetails('The Popstival', 'Hotel Bumiwiyata Depok', 'Festival musik pop tahunan yang menarik perhatian dari seluruh Jawa Barat. Menghadirkan panggung utama dan panggung mini dengan genre pop, R&B, dan EDM.')">Lihat Detail Acara</button>
-            </div>
+        <div class="concert-card-simple">
+            <div class="concert-info"><h4>AKAMSI (25 NOVEMBER)</h4><p>Vokasi UI | Tiket: Mulai IDR 150.000</p></div>
+            <button class="detail-button" 
+                onclick="openModal('AKAMSI', '25 November 2025', 'Vokasi UI', 'https://www.instagram.com/kamikasi.ui?igsh=emI2eWlwYWFpY2d4', 'Acara musik terbesar di Vokasi UI! Dikenal dengan Lineup *headliner* nasional dan produksi panggung yang spektakuler. Siapkan diri Anda untuk berjingkrak!', 'Presale 1: IDR 150.000, Presale 2: IDR 200.000', 'https://via.placeholder.com/180x250/4a90e2/FFFFFF?text=AKAMSI')">DETAILS & LINKS</button>
         </div>
 
-        <div class="card" style="background-color: #4a5a70;"> 
-            <div class="card-image-container" style="background-color: #50e3c2; font-size: 2em;">TBA</div>
-            <div class="card-info">
-                <p class="card-date">Tanggal: **Akan Diumumkan (TBA)**</p>
-                <h3 class="card-title">WIREHOUSE 2025</h3>
-                <p class="card-location">Vokasi UI</p>
-                <p class="card-status">Status: <strong class="status-tba">Menunggu Konfirmasi</strong></p>
-                <button class="detail-button" style="background-color: orange;" onclick="showConcertDetails('WIREHOUSE 2025', 'Vokasi UI', 'Acara Electronic Dance Music (EDM) terbesar di kampus. Dikenal dengan DJ set internasional dan visual lighting yang imersif. Tanggal dan Lineup masih menunggu rilis.')">Lihat Detail Acara</button>
-            </div>
+        <div class="concert-card-simple">
+            <div class="concert-info"><h4>FOUNDERS NIGHT (28 NOVEMBER)</h4><p>Vokasi UI | Tiket: GRATIS</p></div>
+            <button class="detail-button" 
+                onclick="openModal('FOUNDERS NIGHT', '28 November 2025', 'Vokasi UI', 'https://www.instagram.com/foundersnight.ui?igsh=bDc3cjI2OXdvMmpx', 'Malam apresiasi yang intim namun tetap berkelas, fokus pada jaringan alumni dan penampilan musik jazz/akustik yang premium.','GRATIS (Wajib RSVP)', 'https://via.placeholder.com/180x250/50e3c2/2c3e50?text=FOUNDERS')">DETAILS & LINKS</button>
+        </div>
+
+        <h2 class="section-title" style="color: #FF77A9; border-bottom: 5px solid #FF77A9;">⏳ WAITING - UP NEXT!</h2>
+
+        <div class="concert-card-simple" style="border: 2px solid #FF77A9;">
+            <div class="concert-info"><h4>FESTIVAL BUDAYA FIB UI (TBA)</h4><p>Status: Menunggu Konfirmasi</p></div>
+            <button class="detail-button" style="background: #FF77A9; color: white;"
+                onclick="openModal('FESTIVAL BUDAYA FIB UI', 'TBA', 'FIB UI', 'https://www.instagram.com/festivalbudaya.ui?igsh=Z2g5ZWg2M3p2NDFw', 'Festival besar yang menampilkan keragaman seni dan budaya dari berbagai daerah. Panggung musik tradisional dan kontemporer yang unik dan *eye-catching*.','TBA (Pantau Instagram untuk Harga)', 'https://via.placeholder.com/180x250/FF77A9/FFFFFF?text=FEST+BUDAYA')">DETAILS & LINKS</button>
+        </div>
+
+        <div class="concert-card-simple" style="border: 2px solid #9c27b0;">
+            <div class="concert-info"><h4>HEALINGFEST (TBA)</h4><p>Status: Menunggu Konfirmasi</p></div>
+            <button class="detail-button" style="background: #9c27b0; color: white;"
+                onclick="openModal('HEALINGFEST', 'TBA', 'Vokartion', 'https://www.instagram.com/vokartion?igsh=M2xjYnY2M2h5Z3Fw', 'Acara yang berfokus pada kesejahteraan mental, dengan sesi *talkshow* dan konser akustik yang menenangkan. Energi positif dijamin melimpah!','TBA (Pantau Instagram untuk Harga)', 'https://via.placeholder.com/180x250/9c27b0/FFFFFF?text=HEALING')">DETAILS & LINKS</button>
+        </div>
+
+        <h2 class="section-title" style="color: gray; border-bottom: 3px solid gray;">✅ COMPLETED - WE ROCKED IT!</h2>
+
+        <div class="concert-card-simple" style="opacity: 0.5; border: 1px solid gray; box-shadow: none;">
+            <div class="concert-info"><h4>UI MUSIC FAIR (18 JANUARI)</h4><p>Status: Selesai | Tiket: GRATIS</p></div>
+            <button class="detail-button" style="background-color: #555;" onclick="openModal('UI Music Fair', '18 Januari 2025', 'Balairung UI', 'https://www.instagram.com/uimusicfair?igsh=MTk4ajkybHh1bmk0Nw==', 'Pameran alat musik dan mini konser edukasi. Acara ini terbuka untuk umum dan bertujuan meningkatkan apresiasi musik.','GRATIS', 'https://via.placeholder.com/180x250/444444/FFFFFF?text=UMF')">DETAILS & LINKS</button>
+        </div>
+
+        <div class="concert-card-simple" style="opacity: 0.5; border: 1px solid gray; box-shadow: none;">
+            <div class="concert-info"><h4>KAYANG (19 SEPTEMBER)</h4><p>Status: Selesai | Tiket: Cek Instagram</p></div>
+            <button class="detail-button" style="background-color: #555;" onclick="openModal('KAYANG', '19 September 2025', 'KMF UI', 'https://www.instagram.com/kmf_ui?igsh=a2MzdTNlMXh2YXpu', 'Acara seni dan budaya dari Komunitas Musik Fakultas (KMF UI). Fokus pada penampilan musisi internal kampus dengan nuansa indie.','Cek Instagram', 'https://via.placeholder.com/180x250/757575/FFFFFF?text=KAYANG')">DETAILS & LINKS</button>
+        </div>
+
+        <div class="concert-card-simple" style="opacity: 0.5; border: 1px solid gray; box-shadow: none;">
+            <div class="concert-info"><h4>MAGIS VOL.2 (26 SEPTEMBER)</h4><p>Status: Selesai | Tiket: GRATIS</p></div>
+            <button class="detail-button" style="background-color: #555;" onclick="openModal('Magis Vol.2', '26 September 2025', 'Mantra UI', 'https://www.instagram.com/mantraui?igsh=cmUzaXY3eXM1OTJ3', 'Edisi kedua dari Magis, panggung seni yang lebih kecil namun intim. Diselenggarakan oleh Mantra UI dengan fokus pada ekspresi kreatif.','GRATIS', 'https://via.placeholder.com/180x250/8d6e63/FFFFFF?text=MAGIS')">DETAILS & LINKS</button>
+        </div>
+
+        <div class="concert-card-simple" style="opacity: 0.5; border: 1px solid gray; box-shadow: none;">
+            <div class="concert-info"><h4>PROMED SEJALAN (11 OKTOBER)</h4><p>Status: Selesai | Tiket: GRATIS</p></div>
+            <button class="detail-button" style="background-color: #555;" onclick="openModal('Promed Sejalan', '11 Oktober 2025', 'Vokasi UI', 'https://www.instagram.com/mantraui?igsh=cmUzaXY3eXM1OTJ3', 'Kolaborasi musik dan seni visual antara Vokasi dan Fasilkom. Menampilkan pameran seni interaktif dan konser gratis.','GRATIS', 'https://via.placeholder.com/180x250/e57373/FFFFFF?text=PROMED')">DETAILS & LINKS</button>
         </div>
 
     </main>
     
-    <script>
-        function showConcertDetails(nama, lokasi, deskripsi) {
-            // Membuat teks yang akan ditampilkan di jendela pop-up (alert)
-            const message = 
-                "KONSER: " + nama + 
-                "\nLOKASI: " + lokasi + 
-                "\n----------------------------------------" +
-                "\nDESKRIPSI: " + deskripsi + 
-                "\n\n[Untuk info tiket, cek Instagram resmi acara.]"; // Menambahkan catatan Instagram
+    <div id="concertModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-left">
+                <img id="modalPoster" src="" alt="Poster Konser" class="modal-poster">
+                <h2 id="modalName"></h2>
+                <p id="modalDate" class="modal-date-location"></p>
+                <p id="modalLocation" class="modal-date-location" style="margin-top: -10px;"></p>
                 
-            alert(message);
+                <h3 style="color: var(--color-accent); border-bottom: 1px solid var(--color-primary); padding-bottom: 5px; margin-top: 25px;">INFO TIKET</h3>
+                <ul id="modalPriceList" class="modal-price-list">
+                    </ul>
+            </div>
+            <div class="modal-right">
+                <h2>DESKRIPSI & VIBES</h2>
+                <p id="modalDescription" class="modal-description-text"></p>
+                
+                <h2 style="margin-top: 35px;">IKUTI PERKEMBANGAN</h2>
+                <p style="color: #DDD;">Lihat Lineup, *pre-sale* tiket, dan info terbaru langsung dari official Instagram:</p>
+                <a id="modalInstagramLink" href="#" target="_blank" class="instagram-button">INSTAGRAM RESMI</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("concertModal");
+        
+        // --- Confetti Generator JS ---
+        const confettiContainer = document.getElementById('confetti-container');
+        const NUM_CONFETTI = 50; // Jumlah confetti yang jatuh
+
+        function createConfetti() {
+            for (let i = 0; i < NUM_CONFETTI; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.animationDelay = `-${Math.random() * 5}s`; // Start at random times
+                confetti.style.animationDuration = `${5 + Math.random() * 5}s`; // Random duration
+                confettiContainer.appendChild(confetti);
+            }
+        }
+        
+        // Hanya buat Confetti jika bukan layar kecil (sesuai media query)
+        if (window.innerWidth > 768) {
+            createConfetti();
+        }
+        
+        // --- Modal Functions ---
+        function openModal(name, date, location, instagram, description, price, imageUrl) {
+            // Mengisi konten dasar
+            document.getElementById("modalName").innerText = name;
+            document.getElementById("modalDate").innerText = `Tanggal: ${date}`;
+            document.getElementById("modalLocation").innerText = `Lokasi: ${location}`;
+            document.getElementById("modalDescription").innerText = description;
+            document.getElementById("modalPoster").src = imageUrl;
+            document.getElementById("modalInstagramLink").href = instagram;
+
+            // Mengisi List Harga (Lebih Rapi)
+            const priceListElement = document.getElementById("modalPriceList");
+            priceListElement.innerHTML = ''; 
+
+            const prices = price.split(',').map(item => item.trim());
+
+            if (prices.length > 0) {
+                prices.forEach(p => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = p;
+                    priceListElement.appendChild(listItem);
+                });
+            }
+
+            // Menampilkan Modal
+            modal.style.display = "flex";
+        }
+
+        // Fungsi penutup Modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Menutup Modal jika user mengklik area luar Modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </body>
