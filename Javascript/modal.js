@@ -24,3 +24,5 @@ window.onclick = function(event) {
     closeModal();
   }
 }
+
+if(darkmode === "active") enableDarkmode()
