@@ -1,0 +1,24 @@
+<head> 
+  <link rel="stylesheet" href="CSS/test.css"> 
+</head>
+
+<body>
+
+<!-- Generic Modal Structure (hidden by default) -->
+    <div id="genericModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Default Title</h2>
+        <p id="modalText">Default text content.</p>
+
+        <h4 id="modalInfo">Default text info.</h4>
+      </div>
+    </div>
+
+    <button onclick="openModal('Details', 
+    'Enthufest 2025 balik lagi! Pada tahun kedua ini Enthufest tetap menjadi Festival musik gratis, bayar suka suka, inklusif terbesar di Universitas Indonesia. Tahun ini Enthufest tetap membawakan tema “Buku, Pesta, Cinta,...MUSIK!” dengan 3 panggung.', 
+    'Harga Tiket : Rp. 0 - Rp. 1.000.000')">Open Popup 1</button>
+    <button onclick="openModal('Popup Two Title', 'The text for this second popup is different.')">Open Popup 2</button>
+
+    <script src="Javascript/modal.js"></script>
+</body>
