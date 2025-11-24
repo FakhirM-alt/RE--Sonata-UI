@@ -827,21 +827,34 @@ html {
     color: var(--dark-blue);
   }
 
-  .text-right p {
+.text-right p {
     margin: 0;
     color: var(--muted);
     font-size: 17px;
-  }
+}
 
-  @media (max-width:880px){
+@media (max-width:880px){
     .card{ width:90%; }
     .contact-grid{ gap:28px; }
     .icon-left{ width:70px; height:70px; }
-  }
+}
 
 .labelled {
     text-align: center;
     padding: 3rem;
     font-size: 35px;
     color: var(--headline-color);
+}
+
+.slogan {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 200px;
+    padding-top: 23px;
+}
+
+
+.slogan-placement img {
+    align-content: center;
 }
