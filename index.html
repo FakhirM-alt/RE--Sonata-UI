@@ -13,6 +13,9 @@
     <!--SWIPER CSSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -44,7 +47,7 @@
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="/" class="navbar__links">
+                    <a href="#contacts" class="navbar__links">
                         Contacts
                     </a>
                 </li>
@@ -310,7 +313,7 @@
                 <button onclick="openPopup()">Click Here</button>
             </div>
 
-                        <div class="cards swiper-slide">
+                <div class="cards swiper-slide">
                 <div class="cards-image-container"><img src="Images/Concert Images/Kayang.png" alt=""></div>
                 <div class="cards-info">
                     <p class="cards-date">19 September 2025</p>
@@ -381,21 +384,12 @@
                     <p class="cards-status">Status: <strong class="status-tba">Menunggu Konfirmasi</strong></p>
                 </div>
 
+                <button onclick="openModal('Details', 
+                'Festival bertema healing yang menggabungkan musik, seni, dan aktivitas komunitas untuk menciptakan suasana relaks dan suportif bagi pengunjung.', 
+                'Kategori: Konser',
+                'Harga Tiket : -')">Details</button>
+
                 <button onclick="openPopup()">Click Here</button>
-
-                <div id="myPopup" class="popup-overlay">
-                     <div class="popup-content">
-                        <h2>Details</h2>
-                        <p>Ethufest adalah sebuah festival musikal di mana semua mahsiswa UI
-                            bisa selebrasi dan menyanyi. Kegiatan hanya buka pintu dari jam 15:00 - 
-                            20:30, yang terlambat tidak bisa ikut walaupun sudah punya e-tiket.
-                        </p>
-
-                        <h4>Keperluan: e-ticket dan KTP</h4>
-                        <button onclick="closePopup()">Close</button>
-                    </div>
-
-                </div>
             </div>
 
             <div class="cards unknown swiper-slide"> 
@@ -407,20 +401,13 @@
                     <p class="cards-status">Status: <strong class="status-tba">Menunggu Konfirmasi</strong></p>
                 </div>
 
+                <button onclick="openModal('Details', 
+                'Festival budaya yang memadukan pertunjukan musik, seni, dan aktivitas kebudayaan dari berbagai.', 
+                'Kategori: Konser',
+                'Harga Tiket : -')">Details</button>
+
                 <button onclick="openPopup()">Click Here</button>
 
-                <div id="myPopup" class="popup-overlay">
-                     <div class="popup-content 6">
-                        <h2>Details</h2>
-                        <p>Acara tahunan terbesar untuk penggemar musik Electronic Dance. 
-                            Tanggal dan artis masih menunggu pengumuman resmi.
-                        </p>
-
-                        <h4>Keperluan: e-ticket dan KTP</h4>
-                        <button onclick="closePopup()">Close</button>
-                    </div>
-
-                </div>
             </div>
         </div>
 
@@ -504,6 +491,42 @@
 
         </div>
     </section>
+
+<div class="wrap">
+  <header class="contact-hero">
+    <h1>Contact</h1>
+  </header>
+
+  <section class="contact-grid" id="contacts">
+
+    <!-- PHONE -->
+    <div class="card contact-card">
+      <div class="icon-left">
+        <i class="fa-solid fa-phone"></i>
+      </div>
+      <div class="text-right">
+        <h3>Phone Number</h3>
+        <p>
+          <a href="tel:+6287847115970" style="color:inherit; text-decoration:none; font-weight:500;">
+            +62 878-4711-5970
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="card contact-card">
+      <div class="icon-left">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <div class="text-right">
+        <h3>Email</h3>
+        <p>resonataui@gmail.com</p>
+      </div>
+    </div>
+
+  </section>
+</div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
