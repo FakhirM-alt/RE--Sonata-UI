@@ -21,6 +21,13 @@
     padding-top: 33px;
 }
 
+.labelled {
+    text-align: center;
+    padding: 3rem;
+    font-size: 35px;
+    color: var(--title-color);
+}
+
 .concert-list {
     float: left;
     padding-left: 25px;
@@ -145,6 +152,15 @@ button {
         
 button:hover {
     background-color: #3b74c4;
+}
+
+.source {
+    background-color: var(--base-color);
+}
+
+.source a{
+    text-decoration: none;
+    color: black;
 }
 
 .cards .popup-overlay {
