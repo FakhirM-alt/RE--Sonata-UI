@@ -7,7 +7,7 @@
     --logo-color: #e8d6bf;
     --link-color: #b3e0f0;
     --primary-color: #3a435d;
-    --text-highlight: #d2a162;
+    --text-highlight: #a97e47;
     --title: #e5f3e5;
     --home-back: #8aaacc;
     --transition-page: linear-gradient(180deg, #e3f4fa 0%, #8aaacc 100%);
@@ -19,6 +19,7 @@
     --grad-bottom:#16354a;
     --muted:#6b6b6b;
     --card-bg:#ffffff;
+    --headline-color: white;
 }
 
 .darkmode{
@@ -37,6 +38,7 @@
     --members: #84b9e1;
     --button-swiper: #3d547e;
     --pangination-bullet: #5185bd;
+    --headline-color: whitesmoke;
 }
 
 * {
@@ -58,7 +60,7 @@ html {
 .title {
     text-align: left;
     padding: 3rem;
-    font-size: 35px;
+    font-size: 34px;
     color: var(--text-highlight);
 }
 
@@ -811,3 +813,10 @@ html {
     .contact-grid{ gap:28px; }
     .icon-left{ width:70px; height:70px; }
   }
+
+  .labelled {
+    text-align: center;
+    padding: 3rem;
+    font-size: 35px;
+    color: var(--headline-color);
+}
