@@ -41,14 +41,6 @@
     padding-left: 30px;
     padding-right: 30px;
 }
-    
-.page-title {
-    margin-bottom: 30px;
-    padding-left: 30px;
-    text-align: center;
-    font-size: 34px;
-    color: var(--title-color);
-}
 
 .green {
     color: var(--complete-stat);
